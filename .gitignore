@@ -1,0 +1,7 @@
+baselines/*
+data/*
+results/marinus_labelled/*
+results/synthetic_asw/*
+ht_datasets/*
+__pycache__/*
+results/.DS_Store
