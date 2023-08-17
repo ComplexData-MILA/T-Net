@@ -47,31 +47,6 @@ def plot_misclassification(data, save_dir):
                 results = best_model.test_model(data, np.array(range(len(data.x))))
                 cm = confusion_matrix(data.y, results['preds'])
 
-        # if method == 'nrgnn':
-        #     model_save_name = "baselines/NRGNN/nrgnn_best_model.pkl"
-        #     best_model = torch.load(model_save_name)
-        #     res, cm = best_model.test(data.y, np.array(range(len(data.x))))
-        #     # cm = confusion_matrix(data.y, results['preds'])
-        # elif method == 'mlp':
-        #     cm = pkl.load(open("results/synthetic_asw/mlp_results_confusion_matrix.pkl",'rb'))
-        # elif method == 'pignn':
-        #     cm = pkl.load(open("baselines/pi_gnn/pigcn_confusion_matrix.pkl",'rb'))
-        #     method = 'pignn'
-        # elif method == 'gcn':
-        #     model_save_name = "results/synthetic_asw/"+method+"_results_best_model.pkl"
-        #     best_model = torch.load(model_save_name)
-        #     results = best_model.test_model(data, np.array(range(len(data.x))))
-        #     cm = confusion_matrix(data.y, results['preds'])
-        # else:
-        #     model_save_name = "results/synthetic_asw/"+method+"_results_best_model.pkl"
-        #     if method in ['tnet_cl_no_struct','tnet_cl']:
-        #         method = 't-net'
-        #         j=2
-
-        #     best_model = torch.load(model_save_name)
-        #     results = best_model.test_model(data, np.array(range(len(data.x))))
-        #     cm = confusion_matrix(data.y, results['preds'])
-
         ht_acc = cm[1][1]/num_ht
         num_isw_ht = cm[2][1]
         isw_mis = num_isw_ht/num_isw
