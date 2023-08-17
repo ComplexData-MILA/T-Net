@@ -16,7 +16,7 @@ Unzip the `data.zip` and `results/synthetic_asw.zip` folder for running rest of 
 
 Choose a baseline method name from `mlp, gcn, nrgnn, pignn`. For `NRGNN` and `PIGNN` install their code from their official github repository to run them or use the saved model from our results folder
 
-1. `NRGNN` - https://github.com/EnyanDai/NRGNN)
+1. `NRGNN` - https://github.com/EnyanDai/NRGNN
 2. `PIGNN` - https://github.com/TianBian95/pi-gnn
 
 

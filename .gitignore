@@ -5,3 +5,4 @@ results/synthetic_asw/*
 ht_datasets/*
 __pycache__/*
 results/.DS_Store
+.DS_Store

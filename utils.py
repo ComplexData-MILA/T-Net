@@ -33,17 +33,17 @@ def plot_misclassification(data, save_dir):
         # model_save_name = save_dir+"/"+method+"_results_best_model.pkl"
         # best_model = torch.load(model_save_name)
         # run the model on the entire dataset
-        # if method == 'nrgnn':
-        #     results, cm = best_model.test(data.y, np.array(range(len(data.x))))
-        # elif method == 'pignn':
-        #     _, pred = best_model(data)[0].max(dim=1)
-        #     cm = confusion_matrix(data.y, pred)
-        # elif method == 'mlp':
-        #     pred = best_model.predict(data.x)
-        #     cm = confusion_matrix(data.y, pred)
-        # else:
-        #     results = best_model.test_model(data, np.array(range(len(data.x))))
-        #     cm = confusion_matrix(data.y, results['preds'])
+        if method == 'nrgnn':
+            results, cm = best_model.test(data.y, np.array(range(len(data.x))))
+        elif method == 'pignn':
+            _, pred = best_model(data)[0].max(dim=1)
+            cm = confusion_matrix(data.y, pred)
+        elif method == 'mlp':
+            pred = best_model.predict(data.x)
+            cm = confusion_matrix(data.y, pred)
+        else:
+            results = best_model.test_model(data, np.array(range(len(data.x))))
+            cm = confusion_matrix(data.y, results['preds'])
 
         if method == 'nrgnn':
             model_save_name = "baselines/NRGNN/nrgnn_best_model.pkl"
