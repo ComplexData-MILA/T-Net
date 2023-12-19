@@ -14,6 +14,11 @@ warnings.filterwarnings("ignore")
 import matplotlib
 matplotlib.rcParams.update({'font.size': 28, 'font.family':'Times New Roman'})
 
+
+def save_results(results, save_dir, filename):
+	pkl.dump(results, open(save_dir+"/"+filename,'wb'))
+
+
 def parse_args():
 	parser = argparse.ArgumentParser(description='MO Detection')
 	parser.add_argument('--data_file', type=str, 

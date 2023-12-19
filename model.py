@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch_geometric.nn import SGConv, GCNConv, SimpleConv
+from torch_geometric.nn import SGConv, GCNConv
 from sklearn.metrics import precision_score, f1_score, recall_score, classification_report, fbeta_score
 from utils import calculate_final_weights
 from contrastive_loss import ContrastiveLoss
@@ -92,7 +92,11 @@ class GCNNet(torch.nn.Module):
                         input_dim, output_dim, K=K, cached=True)
         elif conv_model == 'gcn':
             # hidden size of 64 as in the GPA paper 
-            self.aggregate_layer = SimpleConv(aggr='mean', requires_grad=True)
+
+            # self.aggregate_layer = SimpleConv(aggr='mean', requires_grad=True)
+            self.aggregate_layer = GCNConv(input_dim, input_dim, \
+                improved=True, cached=False, add_self_loops=True, normalize=True)
+            # self.aggregate_layer = SimpleConv(aggr='mean', requires_grad=True)
             self.conv1 = GCNConv(input_dim, self.embedding_dim, \
                 improved=True, cached=False, add_self_loops=True, normalize=True)
             self.dropout = torch.nn.Dropout(p=0.5)
