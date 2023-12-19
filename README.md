@@ -16,8 +16,8 @@ Unzip the `data.zip` and `results/synthetic_asw.zip` folder for running rest of 
 
 Choose a baseline method name from `mlp, gcn, nrgnn, pignn`. For `NRGNN` and `PIGNN` install their code from their official github repository to run them or use the saved model from our results folder
 
-1. `NRGNN` - (https://github.com/EnyanDai/NRGNN)[https://github.com/EnyanDai/NRGNN]
-2. `PIGNN` - (https://github.com/TianBian95/pi-gnn)[https://github.com/TianBian95/pi-gnn]
+1. `NRGNN` - (https://github.com/EnyanDai/NRGNN)
+2. `PIGNN` - (https://github.com/TianBian95/pi-gnn)
 
 
 ## For Misclassifciation results (Figure 2 in paper)
@@ -25,5 +25,11 @@ Choose a baseline method name from `mlp, gcn, nrgnn, pignn`. For `NRGNN` and `PI
 
 ## For tabular results (Table 5 in paper)
 `python3 main.py --save_dir results/synthetic_asw --print_results`
+
+## For accessing ASW-Synth
+If you want to get access to the synthetically generated dataset, send an email with a short description of why you need the data to pratheeksha.nair@mail.mcgill.ca 
+
+## Labeling Functions
+The labeling functions used in the paper are specified in `labeling_functions.py` and the code for obtaining weak labels are also included. The code for building the graph from the ads is in `build_graph.py`
 
 
