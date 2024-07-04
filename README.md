@@ -32,4 +32,15 @@ If you want to get access to the synthetically generated dataset, send an email 
 ## Labeling Functions
 The labeling functions used in the paper are specified in `labeling_functions.py` and the code for obtaining weak labels are also included. The code for building the graph from the ads is in `build_graph.py`
 
+## Cite
+Please consider citing our work if you find it useful
+@inproceedings{nair2024t,
+  title={T-NET: Weakly Supervised Graph Learning for Combatting Human Trafficking},
+  author={Nair, Pratheeksha and Liu, Javin and Vajiac, Catalina and Olligschlaeger, Andreas and Chau, Duen Horng and Cazzolato, Mirela and Jones, Cara and Faloutsos, Christos and Rabbany, Reihaneh},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={20},
+  pages={22276--22284},
+  year={2024}
+}
 
